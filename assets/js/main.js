@@ -1,4 +1,4 @@
-// ===== Guru Nanak Traders - main.js with Cart Sidebar =====
+// ===== Guru Nanak Traders - main.js with Cart Sidebar (Optimized) =====
 document.addEventListener('DOMContentLoaded', () => {
 
   const path = window.location.pathname.split('/').pop() || 'index.html';
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartItemsEl.innerHTML = cart.map(c=>`
       <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
         <span>${c.name} x ${c.qty}</span>
-        <button class="remove-btn" data-id="${c.id}" style="background:none;border:none;color:red;cursor:pointer">x</button>
+        <button class="remove-btn" data-id="${c.id}" style="background:none;border:none;color:red;cursor:pointer" aria-label="Remove ${c.name}">x</button>
       </div>
     `).join('');
     const totalItems = cart.reduce((sum,c)=>sum+c.qty,0);
@@ -53,6 +53,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const category = document.getElementById('category');
     const count = document.getElementById('count');
 
+    // Helper: Render a single product card
+    function renderProductCard(p) {
+      return `
+        <div class="card">
+          <img src="${p.image}" alt="${p.name}" style="border-radius:10px;margin-bottom:10px">
+          <h3>${p.name}</h3>
+          <p>${p.brand} • <span class="badge">${p.category}</span></p>
+          <p style="margin-top:6px">${p.description}</p>
+          <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <input type="number" min="1" value="1" class="qty" data-id="${p.id}" style="width:50px" ${!p.in_stock ? 'disabled' : ''} aria-label="Quantity for ${p.name}">
+            <button class="btn chip add-to-cart" data-id="${p.id}" ${!p.in_stock ? 'disabled' : ''} aria-label="Add ${p.name} to cart">Add to Cart</button>
+            ${p.in_stock ? '<span class="badge">In stock</span>' : '<span class="badge">Out of stock</span>'}
+          </div>
+        </div>
+      `;
+    }
+
     fetch('data/products.json')
       .then(r => r.json())
       .then(items => {
@@ -67,20 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return hit && catOk;
           });
 
-          grid.innerHTML = filtered.map(p => `
-            <div class="card">
-              <img src="${p.image}" alt="${p.name}" style="border-radius:10px;margin-bottom:10px">
-              <h3>${p.name}</h3>
-              <p>${p.brand} • <span class="badge">${p.category}</span></p>
-              <p style="margin-top:6px">${p.description}</p>
-              <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-                <input type="number" min="1" value="1" class="qty" data-id="${p.id}" style="width:50px">
-                <a class="btn chip add-to-cart" href="#" data-id="${p.id}">Add to Cart</a>
-                ${p.in_stock ? '<span class="badge">In stock</span>' : '<span class="badge">Out of stock</span>'}
-              </div>
-            </div>
-          `).join('');
-
+          grid.innerHTML = filtered.map(renderProductCard).join('');
           count.textContent = `${filtered.length} item(s)`;
         };
 
@@ -92,9 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
           if(e.target.classList.contains('add-to-cart')){
             e.preventDefault();
             const id = e.target.dataset.id;
-            const qty = parseInt(document.querySelector(`.qty[data-id="${id}"]`).value) || 1;
+            const qtyInput = document.querySelector(`.qty[data-id="${id}"]`);
+            let qty = parseInt(qtyInput.value, 10);
+            if(isNaN(qty) || qty < 1) qty = 1;
+            qtyInput.value = qty; // sanitize input
             const item = items.find(p=>p.id===id);
-            if(!item) return;
+            if(!item || !item.in_stock) return;
             const inCart = cart.find(c=>c.id===id);
             if(inCart) inCart.qty += qty;
             else cart.push({id:item.id, name:item.name, qty});
@@ -107,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         render();
       })
       .catch(e => {
+        console.error(e);
         grid.innerHTML = '<div class="notice">Could not load products.json.</div>';
       });
   }
@@ -121,6 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const waLink = `https://wa.me/918958352000?text=${encodeURIComponent(msg)}`;
       window.open(waLink, '_blank');
     });
-  }
+    }
 
 });
