@@ -11,20 +11,8 @@
   <meta property="og:description" content="Browse pesticides and fertilizers. Seeds & organic coming soon.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/images/og-hero.png">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"Guru Nanak Traders",
-    "description":"Trusted farming inputs: pesticides, fertilizers, seeds (coming), organic products (coming).",
-    "address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"},
-    "telephone":"+91 XXXXX-XXXXX",
-    "url":"https://example.com"
-  }
-  </script>
 </head>
 <body>
-
 
 <header>
   <nav class="nav container">
@@ -33,10 +21,10 @@
       <div class="title">Guru Nanak Traders</div>
     </div>
     <div>
-      <a href="index.html" class="">Home</a>
+      <a href="index.html">Home</a>
       <a href="products.html" class="active">Products</a>
-      <a href="about.html" class="">About</a>
-      <a href="contact.html" class="">Contact</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
       <a href="https://wa.me/91XXXXXXXXXX" class="btn chip" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </nav>
@@ -54,10 +42,21 @@
       <option value="organic">Organic (coming)</option>
     </select>
   </div>
-  <div id="products-grid" class="cards"></div>
+
+  <div style="display:flex; gap:24px;">
+    <div id="products-grid" class="cards" style="flex:2"></div>
+
+    <!-- CART SUMMARY -->
+    <div id="cart-container" style="flex:1; border:1px solid #ccc; border-radius:10px; padding:12px; max-height:500px; overflow-y:auto;">
+      <h3>Cart</h3>
+      <div id="cart-items"></div>
+      <p id="cart-total"></p>
+      <a id="place-order" class="btn" href="#">Place Order via WhatsApp</a>
+    </div>
+  </div>
+
   <p id="count" class="muted"></p>
 </section>
-
 
 <footer>
   <div class="footer-inner container">

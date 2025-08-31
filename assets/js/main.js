@@ -1,12 +1,50 @@
+// ===== Guru Nanak Traders - main.js with Cart Sidebar =====
+document.addEventListener('DOMContentLoaded', () => {
 
-// ===== Guru Nanak Traders - main.js =====
-(function(){
   const path = window.location.pathname.split('/').pop() || 'index.html';
-  // Simple active link flag if not using server-side
+
+  // Active link highlight
   document.querySelectorAll('header a').forEach(a=>{
-    const href = a.getAttribute('href');
-    if(href === path){ a.classList.add('active'); }
+    if(a.getAttribute('href') === path) a.classList.add('active');
   });
+
+  // Cart setup
+  let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+  const saveCart = () => localStorage.setItem('cart', JSON.stringify(cart));
+
+  const cartItemsEl = document.getElementById('cart-items');
+  const cartTotalEl = document.getElementById('cart-total');
+
+  const renderCart = () => {
+    if(!cartItemsEl) return;
+    if(cart.length === 0){
+      cartItemsEl.innerHTML = '<p>Your cart is empty.</p>';
+      cartTotalEl.textContent = '';
+      return;
+    }
+    cartItemsEl.innerHTML = cart.map(c=>`
+      <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+        <span>${c.name} x ${c.qty}</span>
+        <button class="remove-btn" data-id="${c.id}" style="background:none;border:none;color:red;cursor:pointer">x</button>
+      </div>
+    `).join('');
+    const totalItems = cart.reduce((sum,c)=>sum+c.qty,0);
+    cartTotalEl.textContent = `Total items: ${totalItems}`;
+  };
+
+  // Remove item
+  if(cartItemsEl){
+    cartItemsEl.addEventListener('click', e=>{
+      if(e.target.classList.contains('remove-btn')){
+        const id = e.target.dataset.id;
+        cart = cart.filter(c=>c.id!==id);
+        saveCart();
+        renderCart();
+      }
+    });
+  }
+
+  renderCart();
 
   // Product page logic
   if(path === 'products.html'){
@@ -19,6 +57,7 @@
       .then(r => r.json())
       .then(items => {
         let cur = items;
+
         const render = () => {
           const q = (search.value || '').toLowerCase();
           const cat = category.value;
@@ -27,25 +66,61 @@
             const catOk = (cat === 'all' ? true : p.category === cat);
             return hit && catOk;
           });
+
           grid.innerHTML = filtered.map(p => `
             <div class="card">
               <img src="${p.image}" alt="${p.name}" style="border-radius:10px;margin-bottom:10px">
               <h3>${p.name}</h3>
               <p>${p.brand} • <span class="badge">${p.category}</span></p>
               <p style="margin-top:6px">${p.description}</p>
-              <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
-                <a class="btn chip" href="https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent('Interested in '+p.name)}" target="_blank" rel="noopener">Enquire</a>
+              <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                <input type="number" min="1" value="1" class="qty" data-id="${p.id}" style="width:50px">
+                <a class="btn chip add-to-cart" href="#" data-id="${p.id}">Add to Cart</a>
                 ${p.in_stock ? '<span class="badge">In stock</span>' : '<span class="badge">Out of stock</span>'}
               </div>
             </div>
           `).join('');
+
           count.textContent = `${filtered.length} item(s)`;
         };
+
         search.addEventListener('input', render);
         category.addEventListener('change', render);
+
+        // Add to cart
+        grid.addEventListener('click', e=>{
+          if(e.target.classList.contains('add-to-cart')){
+            e.preventDefault();
+            const id = e.target.dataset.id;
+            const qty = parseInt(document.querySelector(`.qty[data-id="${id}"]`).value) || 1;
+            const item = items.find(p=>p.id===id);
+            if(!item) return;
+            const inCart = cart.find(c=>c.id===id);
+            if(inCart) inCart.qty += qty;
+            else cart.push({id:item.id, name:item.name, qty});
+            saveCart();
+            renderCart();
+            alert(`${qty} x ${item.name} added to cart`);
+          }
+        });
+
         render();
-      }).catch(e => {
-        grid.innerHTML = '<div class="notice">Could not load products.json. Ensure the file exists when viewing locally with Live Server or over HTTP.</div>';
+      })
+      .catch(e => {
+        grid.innerHTML = '<div class="notice">Could not load products.json.</div>';
       });
   }
-})();
+
+  // Place order
+  const placeOrderBtn = document.getElementById('place-order');
+  if(placeOrderBtn){
+    placeOrderBtn.addEventListener('click', e=>{
+      e.preventDefault();
+      if(cart.length === 0){ alert('Cart is empty'); return; }
+      let msg = 'Hello, I want to order:\n' + cart.map(c=>`${c.qty} x ${c.name}`).join('\n');
+      const waLink = `https://wa.me/918958352000?text=${encodeURIComponent(msg)}`;
+      window.open(waLink, '_blank');
+    });
+  }
+
+});
