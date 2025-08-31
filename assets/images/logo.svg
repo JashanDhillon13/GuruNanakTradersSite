@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="#0a1328"/>
+  <g transform="translate(24 20)">
+    <path d="M40 84c-18 0-32-14-32-32S22 20 40 20s32 14 32 32c0 5-1 10-4 14l-8-6c2-3 3-6 3-8 0-11-9-20-20-20s-20 9-20 20 9 20 20 20c4 0 8-1 11-3l6 8c-5 3-11 5-17 5Z" fill="url(#g)"/>
+    <text x="40" y="88" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="18" fill="#b6ffe0">GNT</text>
+  </g>
+</svg>

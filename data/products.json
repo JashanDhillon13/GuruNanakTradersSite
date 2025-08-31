@@ -1,0 +1,56 @@
+[
+  {
+    "id": "P-001",
+    "name": "Imidacloprid 17.8% SL",
+    "category": "pesticide",
+    "brand": "AgriSure",
+    "description": "Systemic insecticide for sucking pests in cotton, vegetables, and horticulture.",
+    "image": "assets/images/products/pesticide-1.svg",
+    "in_stock": true
+  },
+  {
+    "id": "P-002",
+    "name": "Glyphosate 41% SL",
+    "category": "pesticide",
+    "brand": "FieldGuard",
+    "description": "Non-selective herbicide for post-emergence weed control in non-crop areas.",
+    "image": "assets/images/products/pesticide-2.svg",
+    "in_stock": true
+  },
+  {
+    "id": "F-101",
+    "name": "NPK 19:19:19 Water Soluble",
+    "category": "fertilizer",
+    "brand": "NutriGro",
+    "description": "Balanced NPK for foliar and fertigation in vegetables, cereals, and fruits.",
+    "image": "assets/images/products/fertilizer-1.svg",
+    "in_stock": true
+  },
+  {
+    "id": "F-102",
+    "name": "Urea (46% N)",
+    "category": "fertilizer",
+    "brand": "GreenYield",
+    "description": "High nitrogen source to boost vegetative growth across multiple crops.",
+    "image": "assets/images/products/fertilizer-2.svg",
+    "in_stock": false
+  },
+  {
+    "id": "S-201",
+    "name": "Hybrid Maize Seeds (Coming Soon)",
+    "category": "seed",
+    "brand": "SeedPrime",
+    "description": "High-germination hybrids suited for regional agroclimate.",
+    "image": "assets/images/products/seed-1.svg",
+    "in_stock": false
+  },
+  {
+    "id": "O-301",
+    "name": "Neem Oil 1500 ppm (Coming Soon)",
+    "category": "organic",
+    "brand": "OrganicRoot",
+    "description": "Bio insecticide & miticide for organic farming programs.",
+    "image": "assets/images/products/organic-1.svg",
+    "in_stock": false
+  }
+]
