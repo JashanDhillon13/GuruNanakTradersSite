@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       if(cart.length === 0){ alert('Cart is empty'); return; }
       let msg = 'Hello, I want to order:\n' + cart.map(c=>`${c.qty} x ${c.name}`).join('\n');
-      const waLink = `https://wa.me/918958352000?text=${encodeURIComponent(msg)}`;
+      const waLink = `https://wa.me/919634759315?text=${encodeURIComponent(msg)}`;
       window.open(waLink, '_blank');
     });
     }
