@@ -9,12 +9,12 @@
     "in_stock": true
   },
   {
-    "id": "id:2",
-    "name": "Glyphosate 41% SL",
-    "category": "pesticide",
-    "brand": "FieldGuard",
-    "description": "Non-selective herbicide for post-emergence weed control in non-crop areas.",
-    "image": "assets/images/products/Boregang_2.jpeg",
+    "id": "id:02",
+    "name": "Urea (46% N)",
+    "category": "fertilizer",
+    "brand": "GreenYield",
+    "description": "High nitrogen source to boost vegetative growth across multiple crops.",
+    "image": "assets/images/products/mortar_10.jpeg",
     "in_stock": true
   },
   {
@@ -33,7 +33,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/YaraLiva_Nitrabor.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:5",
@@ -42,7 +42,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/YaraMila_Complex.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:6",
@@ -51,7 +51,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/YaraVira_NeemCoated.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
    {
     "id": "id:7",
@@ -87,7 +87,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/mortar_10.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:11",
@@ -96,7 +96,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/caldan_4g_11.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:12",
@@ -105,7 +105,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/caldan_50sp_12.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:13",
@@ -141,7 +141,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/EM1_16.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:17",
@@ -150,7 +150,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/chess_17.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:18",
@@ -159,7 +159,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/saaf_18.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
    {
     "id": "id:19",
@@ -195,7 +195,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/nativo_22.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:23",
@@ -204,7 +204,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/Bumper_23.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:24",
@@ -249,7 +249,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/acemainadama_28.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:29",
@@ -258,7 +258,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/sigalit_29.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:30",
@@ -267,7 +267,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/cuflow_30.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
    {
     "id": "id:31",
@@ -303,7 +303,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/intop_pro_34.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:35",
@@ -312,7 +312,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/ingene_intop_35.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:36",
@@ -321,7 +321,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/omycin_36.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:37",
@@ -357,7 +357,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/inclaim_40.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:41",
@@ -366,7 +366,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/duranga_41.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:42",
@@ -375,7 +375,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/e-phon_42.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
    {
     "id": "id:43",
@@ -411,7 +411,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/turbi_46.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:47",
@@ -420,7 +420,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/sulton_47.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:48",
@@ -429,7 +429,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/safonil_48.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:49",
@@ -465,7 +465,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/vikat_52.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:53",
@@ -474,7 +474,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/nurelle_53.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:54",
@@ -483,7 +483,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/majesty_54.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
    {
     "id": "id:55",
@@ -519,7 +519,7 @@
     "brand": "GreenYield",
     "description": "High nitrogen source to boost vegetative growth across multiple crops.",
     "image": "assets/images/products/pendom_58.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:59",
@@ -528,7 +528,7 @@
     "brand": "SeedPrime",
     "description": "High-germination hybrids suited for regional agroclimate.",
     "image": "assets/images/products/paralite_59.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:60",
@@ -537,7 +537,7 @@
     "brand": "OrganicRoot",
     "description": "Bio insecticide & miticide for organic farming programs.",
     "image": "assets/images/products/g-sef_60.jpeg",
-    "in_stock": false
+    "in_stock": true
   },
   {
     "id": "id:61",
